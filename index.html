@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/topnav.css">
+        <link rel="stylesheet" href="css/reversi.css">
+        <title>Reversi</title>
+    </head>
+    
+    <body>
+        <div class="topnav">
+            <a href="javascript:NewGame();">New Game</a>
+            <a href="javascript:ShowAbout();">About</a>
+        </div>
+        <div id="reversi"></div>
+    </body>
+    
+    <script src="js/reversi.js"></script>
+    <script> 
+        window.onload = function() {
+            try {
+                //Initialise the game
+                reversi.init('reversi');
+            }
+            catch(err) {
+                //There's been an issue, show the error.
+                alert("Error: " + err.message);
+            }
+        };
+        
+        function NewGame() {
+            try {
+                //Reset everything for the new game
+                reversi.reset();
+            }
+            catch(err) {
+                //There's been an issue, show the error.
+                alert("Error: " + err.message);
+            }
+        }
+        
+        function ShowAbout() {
+          alert("This is a two player game of reversi written in JavaScript, enjoy!");
+        }
+    </script>
+</html>
